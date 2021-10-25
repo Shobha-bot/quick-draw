@@ -1,0 +1,210 @@
+Project-117 Tasks{
+   You have to add the below code in the index.html file.
+   
+1. Add the below code after the h1 tag which is holding the text ‘Quick Draw’:
+
+- Create a p tag and set the text as “Your Sketch” and also give an id
+which will be used to update this p tag with the guessed sketched
+name that you will be drawing on the canvas (functionality for this will
+be added in the next project).   Done
+
+- Similarly, create one more p tag and set text as “Confidence” and also
+give an id which will be used to update this p tag with the confidence
+of the sketch drawn.     Done
+
+- Again, create one more p tag and give text 'Sketch to be drawn' and
+id, which will be used to update the name of the sketch that you have
+to draw on the canvas. Done
+
+2. Now, after the closing the </center> tag, add the below ids:
+
+- Create a span tag and set the text as “Score :” and also give the id
+which will be used to update this span tag with the score for every
+right sketch drawn (functionality for this will be added in the next
+project).          Done
+
+- Similarly, create one more span tag and set the text as “Timer :” and
+also give the id which will be used to update this span tag with the
+time limit for every sketch you will be drawing.           Done
+
+
+
+Now add the below code in style.css file:
+
+1. Add a good background color to the body tag.        Done                 
+
+2. Access the span tag which is holding the score using its id and add the code
+for following:
+
+- Set the font-size as per your choice.            Done
+
+- Set the margin to the left and set the value in pixels in such a way that
+the Score doesn't stick to the extreme left of the screen.         Done
+
+3. Access the span tag which is holding the time using its id, and add the code
+for the following things:
+
+- Set the font-size as per your choice.  Done 
+
+- We want the time to be displayed on the right hand side of the screen,
+hence add a float:right style to it.            Done
+
+- Set the margin to the right and set the value in pixels in such a way
+that the Time doesn't stick to the extreme right of the screen.   Done
+
+4. Access the span tag which is holding the Sketch to be drawn using its id and
+add the suitable text color, so that the sketch name to be drawn highlights
+properly.                 Done
+
+
+
+Now add the below code in the main.js file:
+
+1. Define a variable random_number, and inside it:
+
+- Generate a random number - to set the range from random number use
+the length of the quick_draw_data_set array (Hints are given).    Done
+
+2. Then, using the console.log() function, print the random sketch name, by
+passing the random_number as an index to the quick_draw_data_set array
+on the console screen.   Done
+
+3. Again, get the random sketch name, by passing the random_number as an
+index to the quick_draw_data_set array and store it in the sketch variable.  Done
+
+4. Then, update the text of the span tag which is holding the Sketch to be drawn
+using its id with text 'Sketch To be Drawn:' and concatenated with a sketch
+variable.   Done
+
+5. Then, after this, define the below variables:
+
+- timer_counter- initialize this variable to 0. This variable will keep on
+incrementing the timer counter value.  
+
+- timer_check- add empty string inside it. This will keep checking the
+timer value.
+
+- drawn_sketch- add empty string inside it. This holds the approximate
+guess for the sketch you have drawn on the canvas.
+
+- answer_holder- add an empty string inside it. This variable holds the
+value when the drawn sketch and the sketch to be drawn matches.
+
+- score- initialize this variable to 0. This variable holds the score value for
+every right sketch drawn.
+
+}
+
+
+
+
+project 118{
+   You need to continue coding in the main.js file from the previous project:
+
+The functionality of this project will be to create a canvas to draw the sketch - create the draw() function to draw the sketch, create a check_sketch() function to check if the drawn sketch and sketch to be drawn are equal.         Done
+
+ So, let's start by defining a function to create a canvas.       Done
+
+First, define a function updateCanvas().       Done
+
+Inside this function, add the following code:
+
+Set the background of the canvas as white.        Done
+
+Now, define a function setup(), and inside the function, add the following code:
+
+Define a variable canvas, and inside it, write the code for creating the canvas with 280 pixels height and width.     Done
+
+Then, place the canvas in the center.      Done
+
+Set the background of the canvas to white.       Done
+
+Define a draw function, and inside it, call the function check_sketch() which we will define later in the code.  Done
+
+Then, using the if statement, check if the drawn_sketch variable is equal to the sketch variable. Done
+
+And if it is equal, then update the following:
+
+Update variable answer_holder with string “set”. This is to indicate that the drawn sketch is equal to the sketch.     Done
+
+Then, increment the value of the score variable.           Done
+
+We are doing this for every right sketch drawn, to increase the score.
+
+Now, update the text of the span tag which holds the string “Score:” and concatenate the score variable with it.    Done
+
+Now, define a function check_sketch().        Done
+
+The functionality of this function will be to check if the drawn sketch is equal to the sketch to be drawn and keep on incrementing time and checking if the time is up.
+
+Inside it, add the following code:
+
+Increment the timer_counter variable value by 1.    Done
+
+Update the text of the span tag which holds time with the “Timer” string and concatenate the timer_counter variable with it.                    Done
+
+Using the console.log() function, print the value of the timer_counter on the console.                Done
+
+Then, using the if condition, check if the timer_counter value is greater than 4000 (We have set this as 400, but you can set any value you want).                                Done
+
+We are doing this because we are setting the time limit for drawing the sketch to 400 milliseconds.
+
+This is done because the name of the application is quick draw, and you have to draw the correct image quickly within the time limit.
+
+So, we will check if the timer value is greater than 400:
+
+Set the timer_counter to 0.            Done
+
+This is done because we are setting a time limit of 400 millisecond to draw the sketch.
+      
+Set the timer_check value as completed when the time_counter reaches the value 400.  Done
+
+Now, again create another if condition for checking if the timer_check value is equal to “completed” OR the answer_holder variable value is equal to “set”, and update the following variables:
+
+Set the timer_check variable as empty, so that it gets updated for a new sketch to be drawn.      Done
+
+Set the answer_holder variable as empty, so that it gets updated for a new sketch to be drawn.       Done
+
+And call the updateCanvas().
+
+}
+
+
+Tasks 119{
+Define a function preload(), and inside it, load the doodlenet model using the ml5.imageClassifier() function and store
+ it inside the variable classifier.         Done
+
+You have already created the function setup(), inside this function,
+ add a code to call the classifyCanvas function when the mouse is released.      Done
+
+Then, after the function setup(), define a function draw() and add the following code to this function.    
+
+Set the strokeWeight as per your choice.   Done     
+
+Set the stroke color as per your choice.         Done
+
+Then using the if statement, check if the mouse is pressed, and inside the ‘if’ condition,
+ write code for drawing on canvas, with the help of line() function, which takes 4 parameters which are.
+pmouseX, pmouseY, mouseX, and mouseY.                   Done
+ 
+Define a function classifyCanvas(), and inside it, call the classifier.classify() function, and inside it, 
+pass two parameters as canvas and gotResult. This will get the name of the sketch drawn on canvas and check if 
+the sketch drawn on the canvas matches the required sketch needed to be drawn.        Done
+     
+Then define a function gotResult(), and inside this function, pass two parameters, error and results. Done And using the if 
+statements, check the below conditions:
+
+Now check if there is any error by passing the error parameter inside the if statement. And if there 
+is any error, update it on console, using console.error().   Done 
+
+Then update the results on the console, using the console.log() function, and inside it, pass the results parameter.         Done
+
+Then fetch the first value for the label that is present at 0 index of the results array and store it in variable
+ drawn_sketch.      Done
+
+Then update the HTML tag which has text “Your Sketch” using its ID with text “Your Sketch” concatenated with variable
+ drawn_sketch.        Done
+
+Then update the HTML tag which is holding the confidence value, by calculating the percentage value of the confidence,
+ which is coming from the model.               Done
+}
